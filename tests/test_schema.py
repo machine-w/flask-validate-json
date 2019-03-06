@@ -1,14 +1,12 @@
-
-    
 import unittest
-import flask
+from flask import Flask,g
 
-from flask_valicdate_json import validate_json
+from flask_validate_json import validate_json
 
 
 class TestExpects(unittest.TestCase):
     def setUp(self):
-        self.app = flask.Flask(__name__)
+        self.app = Flask(__name__)
 
         @self.app.route('/')
         @validate_json()
@@ -39,8 +37,8 @@ class TestExpects(unittest.TestCase):
                                    data='{"name": "Eggs", "price": 34.99}',
                                    content_type='application/json')
         self.assertEqual(200, response.status_code)
-        self.assertEqual('Eggs', flask.g.data['name'])
-        self.assertEqual(34.99, flask.g.data['price'])
+        self.assertEqual('Eggs', g.json_data['name'])
+        self.assertEqual(34.99, g.json_data['price'])
 
     def test_validation_invalid(self):
         response = self.client.get('/schema',
