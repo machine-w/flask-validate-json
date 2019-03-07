@@ -3,7 +3,7 @@ from flask import request, g, abort
 import re
 from jsonschema import validate, ValidationError
 from .custom_message import handle_failure
-from .default_value import DefaultValidatingDraft4Validator
+from .default_fill import DefaultValidatingDraft4Validator
 
 def validate_json(schema={}, resp_func=lambda e: abort(400, e.message),force=False,custom_message=True,fill_defaults=False ):
     def decorator(func):
