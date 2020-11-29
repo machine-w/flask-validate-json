@@ -11,8 +11,8 @@ setup(
     version='1.0',
     description='This is a Flask Plugin to be used for Validate JSON request data.',
     long_description=readme(),
-    url='https://github.com/ma2ma/flask-validate-json',
-    author='machine1980',
+    url='https://github.com/machine-w/flask-validate-json',
+    author='machine-w',
     author_email='steve2008.ma@gmail.com',
     license='MIT',
     classifiers=[
