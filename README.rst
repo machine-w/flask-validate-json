@@ -1,7 +1,6 @@
-|version| |license| |pyversions| |pipeline status| |coverage|
 
 flask-validate-json
-==================
+=================================================
 
 This is a Flask Plugin to be used for Validate JSON request data.
 
@@ -12,7 +11,7 @@ jsonschema documentation:
 https://json-schema.org/understanding-json-schema/index.html
 
 Usage
------
+--------
 
 This package provides a flask route decorator to validate json payload.
 

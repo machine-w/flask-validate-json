@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages,Extension
 
 
 def readme():
@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name='flask-validate-json',
-    version='1.0',
+    version='0.0.1',
     description='This is a Flask Plugin to be used for Validate JSON request data.',
     long_description=readme(),
     url='https://github.com/machine-w/flask-validate-json',
