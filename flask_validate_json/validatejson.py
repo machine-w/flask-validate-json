@@ -5,11 +5,11 @@ from jsonschema import validate, ValidationError
 from .custom_message import handle_failure
 from .default_fill import DefaultValidatingDraft4Validator
 
-def validate_json(schema={}, resp_func=lambda e: abort(400, e.message),force=False,custom_message=True,fill_defaults=False ):
+def validate_json(schema={}, resp_func=lambda e: abort(400, e.message),force=False,custom_message=True,fill_defaults=False,from_form=False ):
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kw):
-            data = request.get_json(force=force)
+            data = request.form.to_dict() if from_form else request.get_json(force=force)
             if data is None:
                 return resp_func('can not decode json object')
             try:
